@@ -37,18 +37,31 @@ let handleChange=(event)=>{
     setCity(event.target.value);
 }
 
-let handleSubmit=async (event)=>{
-    try{
-        event.preventDefault();
-        console.log(city);
-        setCity("");
-        let newInfo=await getWeatherInfo();
-        updateInfo(newInfo);
-    } catch(err){
-        setError(true);
-    }
+// let handleSubmit=async (event)=>{
+//     try{
+//         event.preventDefault();
+//         console.log(city);
+//         setCity("");
+//         let newInfo=await getWeatherInfo();
+//         updateInfo(newInfo);
+//     } catch(err){
+//         setError(true);
+//     }
    
-}
+// }
+
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const newInfo = await getWeatherInfo();
+      updateInfo(newInfo);
+      setError(false); // reset error
+      setCity("");     // clear input
+    } catch (err) {
+      setError(true); // show error
+    }
+  };
+
 
     return(
         <div className="SearchBox">
