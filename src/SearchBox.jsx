@@ -1,5 +1,5 @@
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import "./SearchBox.css"
 import { useState } from 'react';
 
@@ -10,7 +10,7 @@ let [error, setError]=useState(false);
 const API_URL="https://api.openweathermap.org/data/2.5/weather";
 const API_KEY = "dd3d3cecced243a6310ee2f541bb525e";
 
-let getWeatherInfo=async()=>{
+let getWeatherInfo=async()=>{ 
     try{
         let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`); //unit is extra parameter for returning temperature in degree
         let jsonResponse = await response.json();
