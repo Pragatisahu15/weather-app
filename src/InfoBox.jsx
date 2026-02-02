@@ -30,10 +30,15 @@ export default function InfoBox({ info }) {
             >
                 <CardMedia
                     component="img"
-                    height="110"
                     image={imageUrl}
                     alt="Weather condition"
+                    sx={{
+                        height: 140,
+                        width: "100%",
+                        objectFit: "cover",
+                    }}
                 />
+
 
                 <CardContent sx={{ textAlign: "center", py: 1 }}>
                     <Typography variant="h5" fontWeight={600}>
