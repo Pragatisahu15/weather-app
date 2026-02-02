@@ -1,4 +1,9 @@
-.SearchBox{
+.SearchBox {
     text-align: center;
     margin-bottom: 25px;
+}
+
+.searchHint {
+    margin: 0 0 16px 0;
+    font-size: 14px;
 }
